@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="marketModelStoreContainer" CdmEntityContainer="marketEntities">
+    <EntitySetMapping Name="elemanlars">
+      <EntityTypeMapping TypeName="marketModel.elemanlar">
+        <MappingFragment StoreEntitySet="elemanlar">
+          <ScalarProperty Name="elemanno" ColumnName="elemanno" />
+          <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+          <ScalarProperty Name="elemanpozisyon" ColumnName="elemanpozisyon" />
+          <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+          <ScalarProperty Name="elemanstatu" ColumnName="elemanstatu" />
+          <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gorevlers">
+      <EntityTypeMapping TypeName="marketModel.gorevler">
+        <MappingFragment StoreEntitySet="gorevler">
+          <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+          <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+          <ScalarProperty Name="gorevtanimi" ColumnName="gorevtanimi" />
+          <ScalarProperty Name="gorevfiyat" ColumnName="gorevfiyat" />
+          <ScalarProperty Name="gorevsuresi" ColumnName="gorevsuresi" />
+          <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="elemanara" FunctionName="marketModel.Store.elemanara">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.elemanara_Result">
+          <ScalarProperty Name="elemanno" ColumnName="elemanno" />
+          <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+          <ScalarProperty Name="elemanpozisyon" ColumnName="elemanpozisyon" />
+          <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+          <ScalarProperty Name="elemanstatu" ColumnName="elemanstatu" />
+          <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="elemanekle" FunctionName="marketModel.Store.elemanekle" />
+    <FunctionImportMapping FunctionImportName="elemanlistele" FunctionName="marketModel.Store.elemanlistele">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.elemanlistele_Result">
+          <ScalarProperty Name="elemanno" ColumnName="elemanno" />
+          <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+          <ScalarProperty Name="elemanpozisyon" ColumnName="elemanpozisyon" />
+          <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+          <ScalarProperty Name="elemanstatu" ColumnName="elemanstatu" />
+          <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="elemansil" FunctionName="marketModel.Store.elemansil" />
+    <FunctionImportMapping FunctionImportName="elemanyenile" FunctionName="marketModel.Store.elemanyenile" />
+    <FunctionImportMapping FunctionImportName="gorevara" FunctionName="marketModel.Store.gorevara">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.gorevara_Result">
+          <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+          <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+          <ScalarProperty Name="gorevtanimi" ColumnName="gorevtanimi" />
+          <ScalarProperty Name="gorevfiyat" ColumnName="gorevfiyat" />
+          <ScalarProperty Name="gorevsuresi" ColumnName="gorevsuresi" />
+          <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gorevekle" FunctionName="marketModel.Store.gorevekle" />
+    <FunctionImportMapping FunctionImportName="gorevlistele" FunctionName="marketModel.Store.gorevlistele">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.gorevlistele_Result">
+          <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+          <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+          <ScalarProperty Name="gorevtanimi" ColumnName="gorevtanimi" />
+          <ScalarProperty Name="gorevfiyat" ColumnName="gorevfiyat" />
+          <ScalarProperty Name="gorevsuresi" ColumnName="gorevsuresi" />
+          <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gorevsil" FunctionName="marketModel.Store.gorevsil" />
+    <FunctionImportMapping FunctionImportName="gorevyenile" FunctionName="marketModel.Store.gorevyenile" />
+    <FunctionImportMapping FunctionImportName="goreveleman" FunctionName="marketModel.Store.goreveleman">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.goreveleman_Result">
+          <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+          <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="goreveleman3" FunctionName="marketModel.Store.goreveleman3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.goreveleman3_Result">
+          <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+          <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+          <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gorev1" FunctionName="marketModel.Store.gorev1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.gorev1_Result">
+          <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+          <ScalarProperty Name="kasa_sorumlusu_olan_elemanların_maaşları_toplamı" ColumnName="kasa sorumlusu olan elemanların maaşları toplamı" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="kullanicilars">
+      <EntityTypeMapping TypeName="marketModel.kullanicilar">
+        <MappingFragment StoreEntitySet="kullanicilar">
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+          <ScalarProperty Name="kullanicino" ColumnName="kullanicino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="kullaniciekle" FunctionName="marketModel.Store.kullaniciekle" />
+    <FunctionImportMapping FunctionImportName="kullanicigiris" FunctionName="marketModel.Store.kullanicigiris">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.kullanicigiris_Result">
+          <ScalarProperty Name="kullanicino" ColumnName="kullanicino" />
+          <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gorevmaas" FunctionName="marketModel.Store.gorevmaas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="marketModel.gorevmaas_Result">
+          <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+          <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gorevstatü" FunctionName="marketModel.Store.gorevstatü" />
+    <FunctionImportMapping FunctionImportName="gorevsure" FunctionName="marketModel.Store.gorevsure" />
+  </EntityContainerMapping>
+</Mapping>

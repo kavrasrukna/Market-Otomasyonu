@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="marketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="elemanlar">
+    <Key>
+      <PropertyRef Name="elemanno" />
+    </Key>
+    <Property Name="elemanno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="elemanadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="elemanpozisyon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="elemanmaas" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="elemanstatu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gorevno" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gorevler">
+    <Key>
+      <PropertyRef Name="gorevno" />
+    </Key>
+    <Property Name="gorevno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gorevadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gorevtanimi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gorevfiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="gorevsuresi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gorevdurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_elemanlar_gorevler">
+    <End Role="gorevler" Type="Self.gorevler" Multiplicity="0..1" />
+    <End Role="elemanlar" Type="Self.elemanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gorevler">
+        <PropertyRef Name="gorevno" />
+      </Principal>
+      <Dependent Role="elemanlar">
+        <PropertyRef Name="gorevno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="marketEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="elemanlars" EntityType="Self.elemanlar" />
+    <EntitySet Name="gorevlers" EntityType="Self.gorevler" />
+    <AssociationSet Name="FK_elemanlar_gorevler" Association="Self.FK_elemanlar_gorevler">
+      <End Role="gorevler" EntitySet="gorevlers" />
+      <End Role="elemanlar" EntitySet="elemanlars" />
+    </AssociationSet>
+    <FunctionImport Name="elemanara" ReturnType="Collection(marketModel.elemanara_Result)">
+      <Parameter Name="elemanadi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="elemanekle">
+      <Parameter Name="elemanadi" Mode="In" Type="String" />
+      <Parameter Name="elemanpozisyon" Mode="In" Type="String" />
+      <Parameter Name="elemanmaas" Mode="In" Type="Decimal" />
+      <Parameter Name="elemanstatu" Mode="In" Type="String" />
+      <Parameter Name="gorevno" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="elemanlistele" ReturnType="Collection(marketModel.elemanlistele_Result)" />
+    <FunctionImport Name="elemansil">
+      <Parameter Name="elemanno" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="elemanyenile">
+      <Parameter Name="elemanno" Mode="In" Type="Int32" />
+      <Parameter Name="elemanadi" Mode="In" Type="String" />
+      <Parameter Name="elemanpozisyon" Mode="In" Type="String" />
+      <Parameter Name="elemanmaas" Mode="In" Type="Decimal" />
+      <Parameter Name="elemanstatu" Mode="In" Type="String" />
+      <Parameter Name="gorevno" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="gorevara" ReturnType="Collection(marketModel.gorevara_Result)">
+      <Parameter Name="gorevadi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="gorevekle">
+      <Parameter Name="gorevadi" Mode="In" Type="String" />
+      <Parameter Name="gorevtanimi" Mode="In" Type="String" />
+      <Parameter Name="gorevfiyat" Mode="In" Type="Decimal" />
+      <Parameter Name="gorevsuresi" Mode="In" Type="String" />
+      <Parameter Name="gorevdurum" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="gorevlistele" ReturnType="Collection(marketModel.gorevlistele_Result)" />
+    <FunctionImport Name="gorevsil">
+      <Parameter Name="gorevno" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="gorevyenile">
+      <Parameter Name="gorevno" Mode="In" Type="Int32" />
+      <Parameter Name="gorevadi" Mode="In" Type="String" />
+      <Parameter Name="gorevtanimi" Mode="In" Type="String" />
+      <Parameter Name="gorevfiyat" Mode="In" Type="Decimal" />
+      <Parameter Name="gorevsuresi" Mode="In" Type="String" />
+      <Parameter Name="gorevdurum" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(marketModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(marketModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="goreveleman" ReturnType="Collection(marketModel.goreveleman_Result)" />
+    <FunctionImport Name="goreveleman2" ReturnType="Collection(marketModel.goreveleman2_Result)" />
+    <FunctionImport Name="goreveleman3" ReturnType="Collection(marketModel.goreveleman3_Result)" />
+    <FunctionImport Name="gorev1" ReturnType="Collection(marketModel.gorev1_Result)" />
+    <EntitySet Name="kullanicilars" EntityType="marketModel.kullanicilar" />
+    <FunctionImport Name="kullaniciekle">
+      <Parameter Name="kullaniciadi" Mode="In" Type="String" />
+      <Parameter Name="sifre" Mode="In" Type="String" />
+      <Parameter Name="mail" Mode="In" Type="String" />
+      <Parameter Name="telefon" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="kullanicigiris" ReturnType="Collection(marketModel.kullanicigiris_Result)">
+      <Parameter Name="kullaniciadi" Mode="In" Type="String" />
+      <Parameter Name="sifre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="gorevmaas" ReturnType="Collection(marketModel.gorevmaas_Result)" />
+    <FunctionImport Name="gorevstatü" ReturnType="Collection(Decimal)" />
+    <FunctionImport Name="gorevsure" ReturnType="Collection(String)" />
+  </EntityContainer>
+  <ComplexType Name="elemanara_Result">
+    <Property Type="Int32" Name="elemanno" Nullable="false" />
+    <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="elemanpozisyon" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+    <Property Type="String" Name="elemanstatu" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="gorevno" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="elemanlistele_Result">
+    <Property Type="Int32" Name="elemanno" Nullable="false" />
+    <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="elemanpozisyon" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+    <Property Type="String" Name="elemanstatu" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="gorevno" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="gorevara_Result">
+    <Property Type="Int32" Name="gorevno" Nullable="false" />
+    <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gorevtanimi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="gorevfiyat" Nullable="true" Precision="19" />
+    <Property Type="String" Name="gorevsuresi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gorevdurum" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="gorevlistele_Result">
+    <Property Type="Int32" Name="gorevno" Nullable="false" />
+    <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gorevtanimi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="gorevfiyat" Nullable="true" Precision="19" />
+    <Property Type="String" Name="gorevsuresi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gorevdurum" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="goreveleman_Result">
+    <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="goreveleman2_Result">
+    <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="goreveleman3_Result">
+    <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+    <Property Type="String" Name="gorevdurum" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="gorev1_Result">
+    <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="kasa_sorumlusu_olan_elemanların_maaşları_toplamı" Nullable="true" Precision="19" />
+  </ComplexType>
+  <EntityType Name="kullanicilar">
+    <Key>
+      <PropertyRef Name="kullanicino" />
+    </Key>
+    <Property Name="kullanicino" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefon" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="kullanicigiris_Result">
+    <Property Type="Int32" Name="kullanicino" Nullable="false" />
+    <Property Type="String" Name="kullaniciadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sifre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="gorevmaas_Result">
+    <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+    <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

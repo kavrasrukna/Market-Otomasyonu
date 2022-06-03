@@ -1,0 +1,104 @@
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe.config
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\marketentityproc.pdb
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\EntityFramework.dll
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\EntityFramework.xml
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.AssemblyReference.cache
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.SuggestedBindingRedirects.cache
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Form1.resources
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.gorev.resources
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Properties.Resources.resources
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.GenerateResource.cache
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CoreCompileInputs.cache
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CopyComplete
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.exe
+C:\Users\STUDENT1\Desktop\örneklerimiz\marketentityproc\marketentityproc\obj\Debug\marketentityproc.pdb
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.AssemblyReference.cache
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.SuggestedBindingRedirects.cache
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Form1.resources
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.gorev.resources
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Properties.Resources.resources
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.GenerateResource.cache
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CoreCompileInputs.cache
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.exe
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.pdb
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.raporlar.resources
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe.config
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\marketentityproc.pdb
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.dll
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.dll
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.xml
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.xml
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CopyComplete
+D:\DOSYALARIM\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.anasayfa.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.AssemblyReference.cache
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.anasayfa.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Form1.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.gorev.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.kullanicigirisi.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Properties.Resources.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.raporlar.resources
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.GenerateResource.cache
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CoreCompileInputs.cache
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.exe
+C:\Users\HJP\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.pdb
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.AssemblyReference.cache
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.anasayfa.resources
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Form1.resources
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.gorev.resources
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.kullanicigirisi.resources
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Properties.Resources.resources
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.raporlar.resources
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.GenerateResource.cache
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CoreCompileInputs.cache
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.exe
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.pdb
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe.config
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\marketentityproc.pdb
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.dll
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.xml
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rükna\Desktop\buna baksonn\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CopyComplete
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.AssemblyReference.cache
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.anasayfa.resources
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Form1.resources
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.gorev.resources
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.kullanicigirisi.resources
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Properties.Resources.resources
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.raporlar.resources
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.GenerateResource.cache
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CoreCompileInputs.cache
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.exe
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.pdb
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe.config
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\marketentityproc.pdb
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.dll
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.dll
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.xml
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.xml
+G:\DOSYALARIM\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CopyComplete
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.AssemblyReference.cache
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.anasayfa.resources
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Form1.resources
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.gorev.resources
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.kullanicigirisi.resources
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.Properties.Resources.resources
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.raporlar.resources
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.GenerateResource.cache
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CoreCompileInputs.cache
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.exe
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.pdb
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe.config
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\marketentityproc.exe
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\marketentityproc.pdb
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.dll
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.xml
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HJP\Desktop\marketenson\marketentityproc\marketentityproc\obj\Debug\marketentityproc.csproj.CopyComplete

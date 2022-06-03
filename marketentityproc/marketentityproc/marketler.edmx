@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="marketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="elemanlar">
+          <Key>
+            <PropertyRef Name="elemanno" />
+          </Key>
+          <Property Name="elemanno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="elemanadi" Type="varchar" MaxLength="50" />
+          <Property Name="elemanpozisyon" Type="varchar" MaxLength="50" />
+          <Property Name="elemanmaas" Type="money" />
+          <Property Name="elemanstatu" Type="varchar" MaxLength="50" />
+          <Property Name="gorevno" Type="int" />
+        </EntityType>
+        <EntityType Name="gorevler">
+          <Key>
+            <PropertyRef Name="gorevno" />
+          </Key>
+          <Property Name="gorevno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gorevadi" Type="varchar" MaxLength="50" />
+          <Property Name="gorevtanimi" Type="varchar" MaxLength="50" />
+          <Property Name="gorevfiyat" Type="money" />
+          <Property Name="gorevsuresi" Type="varchar" MaxLength="50" />
+          <Property Name="gorevdurum" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="kullanicilar">
+          <Key>
+            <PropertyRef Name="kullanicino" />
+          </Key>
+          <Property Name="kullanicino" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullaniciadi" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" />
+          <Property Name="mail" Type="varchar" MaxLength="50" />
+          <Property Name="telefon" Type="char" MaxLength="15" />
+        </EntityType>
+        <Association Name="FK_elemanlar_gorevler">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="0..1" />
+          <End Role="elemanlar" Type="Self.elemanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="gorevno" />
+            </Principal>
+            <Dependent Role="elemanlar">
+              <PropertyRef Name="gorevno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="elemanara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="elemanadi" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="elemanekle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="elemanadi" Type="varchar" Mode="In" />
+          <Parameter Name="elemanpozisyon" Type="varchar" Mode="In" />
+          <Parameter Name="elemanmaas" Type="money" Mode="In" />
+          <Parameter Name="elemanstatu" Type="varchar" Mode="In" />
+          <Parameter Name="gorevno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="elemanlistele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="elemansil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="elemanno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="elemanyenile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="elemanno" Type="int" Mode="In" />
+          <Parameter Name="elemanadi" Type="varchar" Mode="In" />
+          <Parameter Name="elemanpozisyon" Type="varchar" Mode="In" />
+          <Parameter Name="elemanmaas" Type="money" Mode="In" />
+          <Parameter Name="elemanstatu" Type="varchar" Mode="In" />
+          <Parameter Name="gorevno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="gorev1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="gorevara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gorevadi" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="gorevekle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gorevadi" Type="varchar" Mode="In" />
+          <Parameter Name="gorevtanimi" Type="varchar" Mode="In" />
+          <Parameter Name="gorevfiyat" Type="money" Mode="In" />
+          <Parameter Name="gorevsuresi" Type="varchar" Mode="In" />
+          <Parameter Name="gorevdurum" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="goreveleman" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="goreveleman3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="gorevlistele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="gorevmaas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="gorevsil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gorevno" Type="int" Mode="In" />
+        </Function>
+        <Function Name="gorevstatü" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="gorevsure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="gorevyenile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gorevno" Type="int" Mode="In" />
+          <Parameter Name="gorevadi" Type="varchar" Mode="In" />
+          <Parameter Name="gorevtanimi" Type="varchar" Mode="In" />
+          <Parameter Name="gorevfiyat" Type="money" Mode="In" />
+          <Parameter Name="gorevsuresi" Type="varchar" Mode="In" />
+          <Parameter Name="gorevdurum" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="kullaniciekle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="kullaniciadi" Type="varchar" Mode="In" />
+          <Parameter Name="sifre" Type="varchar" Mode="In" />
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="telefon" Type="char" Mode="In" />
+        </Function>
+        <Function Name="kullanicigiris" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="kullaniciadi" Type="varchar" Mode="In" />
+          <Parameter Name="sifre" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="marketModelStoreContainer">
+          <EntitySet Name="elemanlar" EntityType="Self.elemanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gorevler" EntityType="Self.gorevler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_elemanlar_gorevler" Association="Self.FK_elemanlar_gorevler">
+            <End Role="gorevler" EntitySet="gorevler" />
+            <End Role="elemanlar" EntitySet="elemanlar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="marketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="elemanlar">
+          <Key>
+            <PropertyRef Name="elemanno" />
+          </Key>
+          <Property Name="elemanno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="elemanadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="elemanpozisyon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="elemanmaas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="elemanstatu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gorevno" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gorevler">
+          <Key>
+            <PropertyRef Name="gorevno" />
+          </Key>
+          <Property Name="gorevno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gorevadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gorevtanimi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gorevfiyat" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="gorevsuresi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gorevdurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_elemanlar_gorevler">
+          <End Role="gorevler" Type="Self.gorevler" Multiplicity="0..1" />
+          <End Role="elemanlar" Type="Self.elemanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gorevler">
+              <PropertyRef Name="gorevno" />
+            </Principal>
+            <Dependent Role="elemanlar">
+              <PropertyRef Name="gorevno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="marketEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="elemanlars" EntityType="Self.elemanlar" />
+          <EntitySet Name="gorevlers" EntityType="Self.gorevler" />
+          <AssociationSet Name="FK_elemanlar_gorevler" Association="Self.FK_elemanlar_gorevler">
+            <End Role="gorevler" EntitySet="gorevlers" />
+            <End Role="elemanlar" EntitySet="elemanlars" />
+          </AssociationSet>
+          <FunctionImport Name="elemanara" ReturnType="Collection(marketModel.elemanara_Result)">
+          <Parameter Name="elemanadi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="elemanekle">
+            <Parameter Name="elemanadi" Mode="In" Type="String" />
+            <Parameter Name="elemanpozisyon" Mode="In" Type="String" />
+            <Parameter Name="elemanmaas" Mode="In" Type="Decimal" />
+            <Parameter Name="elemanstatu" Mode="In" Type="String" />
+            <Parameter Name="gorevno" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="elemanlistele" ReturnType="Collection(marketModel.elemanlistele_Result)" />
+          <FunctionImport Name="elemansil">
+          <Parameter Name="elemanno" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="elemanyenile">
+            <Parameter Name="elemanno" Mode="In" Type="Int32" />
+            <Parameter Name="elemanadi" Mode="In" Type="String" />
+            <Parameter Name="elemanpozisyon" Mode="In" Type="String" />
+            <Parameter Name="elemanmaas" Mode="In" Type="Decimal" />
+            <Parameter Name="elemanstatu" Mode="In" Type="String" />
+            <Parameter Name="gorevno" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="gorevara" ReturnType="Collection(marketModel.gorevara_Result)">
+          <Parameter Name="gorevadi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="gorevekle">
+            <Parameter Name="gorevadi" Mode="In" Type="String" />
+            <Parameter Name="gorevtanimi" Mode="In" Type="String" />
+            <Parameter Name="gorevfiyat" Mode="In" Type="Decimal" />
+            <Parameter Name="gorevsuresi" Mode="In" Type="String" />
+            <Parameter Name="gorevdurum" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="gorevlistele" ReturnType="Collection(marketModel.gorevlistele_Result)" />
+          <FunctionImport Name="gorevsil">
+          <Parameter Name="gorevno" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="gorevyenile">
+            <Parameter Name="gorevno" Mode="In" Type="Int32" />
+            <Parameter Name="gorevadi" Mode="In" Type="String" />
+            <Parameter Name="gorevtanimi" Mode="In" Type="String" />
+            <Parameter Name="gorevfiyat" Mode="In" Type="Decimal" />
+            <Parameter Name="gorevsuresi" Mode="In" Type="String" />
+            <Parameter Name="gorevdurum" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(marketModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(marketModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="goreveleman" ReturnType="Collection(marketModel.goreveleman_Result)" />
+          <FunctionImport Name="goreveleman2" ReturnType="Collection(marketModel.goreveleman2_Result)" />
+          <FunctionImport Name="goreveleman3" ReturnType="Collection(marketModel.goreveleman3_Result)" />
+          <FunctionImport Name="gorev1" ReturnType="Collection(marketModel.gorev1_Result)" />
+          <EntitySet Name="kullanicilars" EntityType="marketModel.kullanicilar" />
+          <FunctionImport Name="kullaniciekle">
+            <Parameter Name="kullaniciadi" Mode="In" Type="String" />
+            <Parameter Name="sifre" Mode="In" Type="String" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="telefon" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="kullanicigiris" ReturnType="Collection(marketModel.kullanicigiris_Result)">
+            <Parameter Name="kullaniciadi" Mode="In" Type="String" />
+            <Parameter Name="sifre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="gorevmaas" ReturnType="Collection(marketModel.gorevmaas_Result)" />
+          <FunctionImport Name="gorevstatü" ReturnType="Collection(Decimal)" />
+          <FunctionImport Name="gorevsure" ReturnType="Collection(String)" />
+        </EntityContainer>
+        <ComplexType Name="elemanara_Result">
+          <Property Type="Int32" Name="elemanno" Nullable="false" />
+          <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="elemanpozisyon" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+          <Property Type="String" Name="elemanstatu" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="gorevno" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="elemanlistele_Result">
+          <Property Type="Int32" Name="elemanno" Nullable="false" />
+          <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="elemanpozisyon" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+          <Property Type="String" Name="elemanstatu" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="gorevno" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="gorevara_Result">
+          <Property Type="Int32" Name="gorevno" Nullable="false" />
+          <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="gorevtanimi" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="gorevfiyat" Nullable="true" Precision="19" />
+          <Property Type="String" Name="gorevsuresi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="gorevdurum" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="gorevlistele_Result">
+          <Property Type="Int32" Name="gorevno" Nullable="false" />
+          <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="gorevtanimi" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="gorevfiyat" Nullable="true" Precision="19" />
+          <Property Type="String" Name="gorevsuresi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="gorevdurum" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="goreveleman_Result">
+          <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="goreveleman2_Result">
+          <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="goreveleman3_Result">
+          <Property Type="String" Name="elemanadi" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+          <Property Type="String" Name="gorevdurum" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="gorev1_Result">
+          <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="kasa_sorumlusu_olan_elemanların_maaşları_toplamı" Nullable="true" Precision="19" />
+        </ComplexType>
+        <EntityType Name="kullanicilar">
+          <Key>
+            <PropertyRef Name="kullanicino" />
+          </Key>
+          <Property Name="kullanicino" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="kullanicigiris_Result">
+          <Property Type="Int32" Name="kullanicino" Nullable="false" />
+          <Property Type="String" Name="kullaniciadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sifre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="gorevmaas_Result">
+          <Property Type="Decimal" Name="elemanmaas" Nullable="true" Precision="19" />
+          <Property Type="String" Name="gorevadi" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="marketModelStoreContainer" CdmEntityContainer="marketEntities">
+          <EntitySetMapping Name="elemanlars">
+            <EntityTypeMapping TypeName="marketModel.elemanlar">
+              <MappingFragment StoreEntitySet="elemanlar">
+                <ScalarProperty Name="elemanno" ColumnName="elemanno" />
+                <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+                <ScalarProperty Name="elemanpozisyon" ColumnName="elemanpozisyon" />
+                <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+                <ScalarProperty Name="elemanstatu" ColumnName="elemanstatu" />
+                <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gorevlers">
+            <EntityTypeMapping TypeName="marketModel.gorevler">
+              <MappingFragment StoreEntitySet="gorevler">
+                <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+                <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+                <ScalarProperty Name="gorevtanimi" ColumnName="gorevtanimi" />
+                <ScalarProperty Name="gorevfiyat" ColumnName="gorevfiyat" />
+                <ScalarProperty Name="gorevsuresi" ColumnName="gorevsuresi" />
+                <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="elemanara" FunctionName="marketModel.Store.elemanara">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.elemanara_Result">
+                <ScalarProperty Name="elemanno" ColumnName="elemanno" />
+                <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+                <ScalarProperty Name="elemanpozisyon" ColumnName="elemanpozisyon" />
+                <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+                <ScalarProperty Name="elemanstatu" ColumnName="elemanstatu" />
+                <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="elemanekle" FunctionName="marketModel.Store.elemanekle" />
+          <FunctionImportMapping FunctionImportName="elemanlistele" FunctionName="marketModel.Store.elemanlistele">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.elemanlistele_Result">
+                <ScalarProperty Name="elemanno" ColumnName="elemanno" />
+                <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+                <ScalarProperty Name="elemanpozisyon" ColumnName="elemanpozisyon" />
+                <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+                <ScalarProperty Name="elemanstatu" ColumnName="elemanstatu" />
+                <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="elemansil" FunctionName="marketModel.Store.elemansil" />
+          <FunctionImportMapping FunctionImportName="elemanyenile" FunctionName="marketModel.Store.elemanyenile" />
+          <FunctionImportMapping FunctionImportName="gorevara" FunctionName="marketModel.Store.gorevara">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.gorevara_Result">
+                <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+                <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+                <ScalarProperty Name="gorevtanimi" ColumnName="gorevtanimi" />
+                <ScalarProperty Name="gorevfiyat" ColumnName="gorevfiyat" />
+                <ScalarProperty Name="gorevsuresi" ColumnName="gorevsuresi" />
+                <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gorevekle" FunctionName="marketModel.Store.gorevekle" />
+          <FunctionImportMapping FunctionImportName="gorevlistele" FunctionName="marketModel.Store.gorevlistele">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.gorevlistele_Result">
+                <ScalarProperty Name="gorevno" ColumnName="gorevno" />
+                <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+                <ScalarProperty Name="gorevtanimi" ColumnName="gorevtanimi" />
+                <ScalarProperty Name="gorevfiyat" ColumnName="gorevfiyat" />
+                <ScalarProperty Name="gorevsuresi" ColumnName="gorevsuresi" />
+                <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gorevsil" FunctionName="marketModel.Store.gorevsil" />
+          <FunctionImportMapping FunctionImportName="gorevyenile" FunctionName="marketModel.Store.gorevyenile" />
+          <FunctionImportMapping FunctionImportName="goreveleman" FunctionName="marketModel.Store.goreveleman">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.goreveleman_Result">
+                <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+                <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="goreveleman3" FunctionName="marketModel.Store.goreveleman3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.goreveleman3_Result">
+                <ScalarProperty Name="elemanadi" ColumnName="elemanadi" />
+                <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+                <ScalarProperty Name="gorevdurum" ColumnName="gorevdurum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gorev1" FunctionName="marketModel.Store.gorev1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.gorev1_Result">
+                <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+                <ScalarProperty Name="kasa_sorumlusu_olan_elemanların_maaşları_toplamı" ColumnName="kasa sorumlusu olan elemanların maaşları toplamı" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="kullanicilars">
+            <EntityTypeMapping TypeName="marketModel.kullanicilar">
+              <MappingFragment StoreEntitySet="kullanicilar">
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+                <ScalarProperty Name="kullanicino" ColumnName="kullanicino" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="kullaniciekle" FunctionName="marketModel.Store.kullaniciekle" />
+          <FunctionImportMapping FunctionImportName="kullanicigiris" FunctionName="marketModel.Store.kullanicigiris">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.kullanicigiris_Result">
+                <ScalarProperty Name="kullanicino" ColumnName="kullanicino" />
+                <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gorevmaas" FunctionName="marketModel.Store.gorevmaas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="marketModel.gorevmaas_Result">
+                <ScalarProperty Name="elemanmaas" ColumnName="elemanmaas" />
+                <ScalarProperty Name="gorevadi" ColumnName="gorevadi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gorevstatü" FunctionName="marketModel.Store.gorevstatü" />
+          <FunctionImportMapping FunctionImportName="gorevsure" FunctionName="marketModel.Store.gorevsure" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

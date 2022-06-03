@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="marketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="elemanlar">
+    <Key>
+      <PropertyRef Name="elemanno" />
+    </Key>
+    <Property Name="elemanno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="elemanadi" Type="varchar" MaxLength="50" />
+    <Property Name="elemanpozisyon" Type="varchar" MaxLength="50" />
+    <Property Name="elemanmaas" Type="money" />
+    <Property Name="elemanstatu" Type="varchar" MaxLength="50" />
+    <Property Name="gorevno" Type="int" />
+  </EntityType>
+  <EntityType Name="gorevler">
+    <Key>
+      <PropertyRef Name="gorevno" />
+    </Key>
+    <Property Name="gorevno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gorevadi" Type="varchar" MaxLength="50" />
+    <Property Name="gorevtanimi" Type="varchar" MaxLength="50" />
+    <Property Name="gorevfiyat" Type="money" />
+    <Property Name="gorevsuresi" Type="varchar" MaxLength="50" />
+    <Property Name="gorevdurum" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="kullanicilar">
+    <Key>
+      <PropertyRef Name="kullanicino" />
+    </Key>
+    <Property Name="kullanicino" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciadi" Type="varchar" MaxLength="50" />
+    <Property Name="sifre" Type="varchar" MaxLength="50" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="telefon" Type="char" MaxLength="15" />
+  </EntityType>
+  <Association Name="FK_elemanlar_gorevler">
+    <End Role="gorevler" Type="Self.gorevler" Multiplicity="0..1" />
+    <End Role="elemanlar" Type="Self.elemanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gorevler">
+        <PropertyRef Name="gorevno" />
+      </Principal>
+      <Dependent Role="elemanlar">
+        <PropertyRef Name="gorevno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="elemanara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="elemanadi" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="elemanekle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="elemanadi" Type="varchar" Mode="In" />
+    <Parameter Name="elemanpozisyon" Type="varchar" Mode="In" />
+    <Parameter Name="elemanmaas" Type="money" Mode="In" />
+    <Parameter Name="elemanstatu" Type="varchar" Mode="In" />
+    <Parameter Name="gorevno" Type="int" Mode="In" />
+  </Function>
+  <Function Name="elemanlistele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="elemansil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="elemanno" Type="int" Mode="In" />
+  </Function>
+  <Function Name="elemanyenile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="elemanno" Type="int" Mode="In" />
+    <Parameter Name="elemanadi" Type="varchar" Mode="In" />
+    <Parameter Name="elemanpozisyon" Type="varchar" Mode="In" />
+    <Parameter Name="elemanmaas" Type="money" Mode="In" />
+    <Parameter Name="elemanstatu" Type="varchar" Mode="In" />
+    <Parameter Name="gorevno" Type="int" Mode="In" />
+  </Function>
+  <Function Name="gorev1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gorevara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gorevadi" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="gorevekle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gorevadi" Type="varchar" Mode="In" />
+    <Parameter Name="gorevtanimi" Type="varchar" Mode="In" />
+    <Parameter Name="gorevfiyat" Type="money" Mode="In" />
+    <Parameter Name="gorevsuresi" Type="varchar" Mode="In" />
+    <Parameter Name="gorevdurum" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="goreveleman" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="goreveleman3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gorevlistele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gorevmaas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gorevsil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gorevno" Type="int" Mode="In" />
+  </Function>
+  <Function Name="gorevstatü" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gorevsure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gorevyenile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gorevno" Type="int" Mode="In" />
+    <Parameter Name="gorevadi" Type="varchar" Mode="In" />
+    <Parameter Name="gorevtanimi" Type="varchar" Mode="In" />
+    <Parameter Name="gorevfiyat" Type="money" Mode="In" />
+    <Parameter Name="gorevsuresi" Type="varchar" Mode="In" />
+    <Parameter Name="gorevdurum" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="kullaniciekle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="kullaniciadi" Type="varchar" Mode="In" />
+    <Parameter Name="sifre" Type="varchar" Mode="In" />
+    <Parameter Name="mail" Type="varchar" Mode="In" />
+    <Parameter Name="telefon" Type="char" Mode="In" />
+  </Function>
+  <Function Name="kullanicigiris" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="kullaniciadi" Type="varchar" Mode="In" />
+    <Parameter Name="sifre" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="marketModelStoreContainer">
+    <EntitySet Name="elemanlar" EntityType="Self.elemanlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gorevler" EntityType="Self.gorevler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_elemanlar_gorevler" Association="Self.FK_elemanlar_gorevler">
+      <End Role="gorevler" EntitySet="gorevler" />
+      <End Role="elemanlar" EntitySet="elemanlar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
